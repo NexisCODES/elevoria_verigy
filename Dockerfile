@@ -10,9 +10,9 @@ RUN go mod download
 COPY . ./
 
 RUN go build \
-          -ldflags '-w -extldflags "-static"' \
-          -o /bin/verifier \
-          cmd/verifier/main.go
+    -ldflags '-w -extldflags "-static"' \
+    -o /bin/verifier \
+    cmd/verifier/main.go
 
-CMD [ "/bin/verifier" ]
-
+# The CMD instruction specifies the main command to run when the container starts
+CMD ["/bin/verifier"]
